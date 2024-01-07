@@ -1,0 +1,221 @@
+* {
+    margin: 0px;
+
+}
+
+.main-page {
+    width: auto;
+    height: 720px;
+    background: linear-gradient(to top, blue, pink);
+    opacity: 50px;
+    border: 4px dotted black;
+
+}
+
+.header {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h2 {
+    font-size: 30px;
+    font-style: bold;
+    padding: 10px;
+    border: 8px solid black;
+    border-radius: 10px;
+    background: linear-gradient(to right, violet, indigo, blue, green, orange, red, skyblue, pink);
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}
+
+.content {
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 240px;
+    height: 300px;
+    background: linear-gradient(to top, black, navy);
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 3px solid rgb(53, 28, 28);
+    border-width: 5px;
+
+
+}
+
+.card:hover {
+    box-shadow: 0px 4px 15px 15px rgb(54, 227, 239);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0.2s;
+}
+
+.circle {
+    position: absolute;
+    background: url(js.webp);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    padding: 30px 30px;
+    margin-bottom: 120px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle span {
+    margin-bottom: 2px;
+    position: absolute;
+    z-index: -1;
+    height: 115px;
+    width: 115px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to left, #100b94, #0cadda, #57d3e9);
+    border-radius: 50%;
+    animation: animate 0.8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.circle span:nth-child(1) {
+    filter: blur(5px);
+}
+
+.circle span:nth-child(2) {
+    filter: blur(10px);
+}
+
+.img1 {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background: url(html.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img2 {
+    width: 52px;
+    height: 52px;
+
+    position: absolute;
+    background: url(css.png);
+    background-position: center;
+    background-size: cover;
+
+    
+
+}
+
+.img3 {
+    width: 52px;
+    height: 52px;
+
+    position: absolute;
+    background: url(js.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.card h3 {
+    margin-top: 150px;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 30px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+
+}
+
+.card h3::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+/* glow */
+.card h3::before {
+    content: "";
+    background: linear-gradient(45deg,
+            #FF5733, #FFC733, #FFFB00, #48FF00,
+            #00FFD5, #002BFF, #FF00C8, #FF0074);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* hover */
+.card h3:hover::before {
+    opacity: 1;
+}
+
+.card h3:active::after {
+    background: transparent;
+}
+
+.card h3:active {
+    color: #000;
+    font-weight: bold;
+}
